@@ -93,6 +93,12 @@
             <artifactId>redisson</artifactId>
             <version>3.13.6</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.12</version>
+        </dependency>
     </dependencies>
 
     <build>
