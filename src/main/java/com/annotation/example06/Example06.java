@@ -4,7 +4,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
-public class Example01 {
+public class Example06 {
     @Person(name="张三",sex = SexEnum.FEMALE,age = 20)
     private Human human1;
 
@@ -12,16 +12,16 @@ public class Example01 {
     private Human human2;
 
     public static void main(String[] args) throws NoSuchFieldException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-        Example01 example01 = new Example01();
-        System.out.println(example01.human1);
-        System.out.println(example01.human2);
-        initField(example01);
-        System.out.println(example01.human1);
-        System.out.println(example01.human2);
+        Example06 example06 = new Example06();
+        System.out.println(example06.human1);
+        System.out.println(example06.human2);
+        initField(example06);
+        System.out.println(example06.human1);
+        System.out.println(example06.human2);
     }
 
-    private static void initField(Example01 example01) throws NoSuchFieldException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        Class clazz = example01.getClass();
+    private static void initField(Example06 example06) throws NoSuchFieldException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        Class clazz = example06.getClass();
         Field field1 = clazz.getDeclaredField("human1");
         Field field2 = clazz.getDeclaredField("human2");
         Person person1 = field1.getDeclaredAnnotation(Person.class);
@@ -38,7 +38,7 @@ public class Example01 {
         human2.setSex(person2.sex());
         human2.setAge(person2.age());
 
-        field1.set(example01,human1);
-        field2.set(example01,human2);
+        field1.set(example06,human1);
+        field2.set(example06,human2);
     }
 }
